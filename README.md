@@ -127,9 +127,9 @@ py script.py --test
 
 Isso executará a função `run_tests()` e validará:
 
--   Normalização\
--   Substituição de vírgulas duplicadas\
--   Extração de coordenadas\
+-   Normalização
+-   Substituição de vírgulas duplicadas
+-   Extração de coordenadas
 -   Parsing de endereço simples
 
 ------------------------------------------------------------------------
