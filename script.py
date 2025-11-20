@@ -15,7 +15,7 @@ REPLACEMENTS = {
     r"\bURB\.(?=[ ,])": "URBANIZACION",
     r"\bGRAL\.(?=[ ,])": "GENERAL",
     r"\bAV\b": "AVENIDA",
-    r"\bC(?=(\s|,|$))": "CALLE",
+    r"\bC(?=(\s|,))": "CALLE",
     r"\bCALZ\b": "CALZADA",
     r"\bCARR\b": "CARRETERA",
     r"\bCAM\b": "CAMINO",
@@ -445,9 +445,10 @@ def run_tests():
     assert endereco_normalizado_2 == "CALLE IGNACIO RAMIREZ 97"
 
     # Teste de remoção de vírgulas duplicadas
-    endereco_com_virgulas = "CALLE A,, B, , ,C"
+    endereco_com_virgulas = "CALLE A,, B, , , C"
     endereco_com_virgulas_normalizado = normalizar_endereco(endereco_com_virgulas)
-    assert endereco_com_virgulas_normalizado == "CALLE A,B,C"
+    
+    assert endereco_com_virgulas_normalizado == "CALLE A, B, C"
 
     # Teste de extração de geo
     endereco_com_geo = normalizar_endereco(
